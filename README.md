@@ -1,6 +1,6 @@
 
 # Async Button Handler
-![App Screenshot](assets/images/logo.gif)
+![App Screenshot](https://raw.githubusercontent.com/mohamedelbalooty/async_button_handler/refs/heads/main/assets/images/logo.gif)
 
 `Async Button Handler` is a Flutter package that simplifies handling asynchronous actions triggered by button presses. It manages loading states without requiring any additional state management libraries. The package is designed to help you reduce boilerplate code while maintaining a clean UI flow for async actions.
 

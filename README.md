@@ -40,7 +40,7 @@ AsyncButtonHandler<Future<void>>(
     // Perform any asynchronous action here, e.g., API call
   },
   loadingChild: CircularProgressIndicator(),
-  buttonChild: Text('Submit'),
+  widget: Text('Submit'),
 );
 ```
 
@@ -53,7 +53,7 @@ AsyncButtonHandler<Future<void>>(
     await Future.delayed(Duration(seconds: 3));
   },
   overlayLoading: true,
-  buttonChild: Text('Submit'),
+  widget: Text('Submit'),
 );
 ```
 
@@ -114,20 +114,20 @@ class ExampleHomePage extends StatelessWidget {
               overlayLoading: false,
               onPressed: asyncOperation,
               loadingChild: const CircularProgressIndicator(),
-              buttonChild: const Text('Async Button'),
+              widget: const Text('Async Button'),
             ),
             const SizedBox(height: 10),
             AsyncButtonHandler<Future<String>>(
               overlayLoading: true,
               onPressed: asyncTypedOperation,
               loadingChild: const CircularProgressIndicator(),
-              buttonChild: const Text('Typed Async Button'),
+              widget: const Text('Typed Async Button'),
             ),
             const SizedBox(height: 10),
             AsyncButtonHandler<void>(
               onPressed: syncOperation,
               loadingChild: const CircularProgressIndicator(),
-              buttonChild: const Text('Sync Button'),
+              widget: const Text('Sync Button'),
             ),
           ],
         ),

@@ -40,22 +40,12 @@ class _AsyncButtonHandlerState<T> extends State<AsyncButtonHandler<T>> {
     if (isAsync) {
       if (!widget.overlayLoading) {
         setState(() => isLoading = true);
-        try {
-          await (widget.onPressed as Future Function())();
-        } catch (e) {
-          rethrow;
-        } finally {
-          if (mounted) setState(() => isLoading = false);
-        }
+        await (widget.onPressed as Future Function())();
+        if (mounted) setState(() => isLoading = false);
       } else {
         _showOverlayLoading(context);
-        try {
-          await (widget.onPressed as Future Function())();
-        } catch (e) {
-          rethrow;
-        } finally {
-          if (mounted) _hideOverlayLoading(context);
-        }
+        await (widget.onPressed as Future Function())();
+        if (mounted) _hideOverlayLoading(context);
       }
     } else {
       widget.onPressed();
@@ -66,11 +56,13 @@ class _AsyncButtonHandlerState<T> extends State<AsyncButtonHandler<T>> {
     await showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (_) => PopScope(
-        canPop: false,
-        child: Center(
-            child: widget.loadingChild ?? const CircularProgressIndicator()),
-      ),
+      builder: (_) =>
+          PopScope(
+            canPop: false,
+            child: Center(
+                child: widget.loadingChild ??
+                    const CircularProgressIndicator()),
+          ),
     );
   }
 

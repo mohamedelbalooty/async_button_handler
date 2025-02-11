@@ -1,6 +1,6 @@
 name: async_button_handler
 description: "A Flutter package that provides a customizable button widget to handle asynchronous actions with built-in loading and error state handling."
-version: 0.1.0+1
+version: 0.1.0+2
 homepage: https://github.com/mohamedelbalooty/async_button_handler
 
 environment:

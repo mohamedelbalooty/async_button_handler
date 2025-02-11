@@ -19,7 +19,7 @@ Add this package to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  async_button_handler: ^0.1.0
+  async_button_handler: ^0.1.0+2
 ```
 
 ## Usage
